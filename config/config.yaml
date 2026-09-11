@@ -1,0 +1,19 @@
+seed: 42
+
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  results_features: "results/features"
+  results_models: "results/models"
+  results_metrics: "results/metrics"
+  results_figures: "results/figures"
+
+preprocessing:
+  low_expression_threshold: 1.0
+  min_sample_proportion: 0.20
+  pam50_exclude: ["Normal-like"]
+
+ml:
+  outer_folds: 5
+  inner_folds: 3
+  scoring_metric: "macro_f1"
