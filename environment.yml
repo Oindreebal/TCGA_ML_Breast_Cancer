@@ -1,0 +1,20 @@
+name: tcga_ml_brca
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - r-base=4.2.2
+  - r-tidyverse
+  - r-biocmanager
+  - pandas
+  - numpy
+  - scikit-learn
+  - xgboost
+  - networkx
+  - pytorch
+  - torch-geometric
+  - shap
+  - pyyaml
+  - pip
