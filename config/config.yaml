@@ -1,5 +1,12 @@
-seed: 42
+# ==============================================================================
+# CONFIGURATION FILE FOR TCGA-BRCA SUBTYPING & PATHWAY PIPELINE
+# ==============================================================================
 
+# Execution Parameters
+seed: 42
+threads: 4
+
+# File Paths (Relative to Repository Root)
 paths:
   data_raw: "data/raw"
   data_processed: "data/processed"
@@ -7,13 +14,50 @@ paths:
   results_models: "results/models"
   results_metrics: "results/metrics"
   results_figures: "results/figures"
+  docs: "docs"
 
+# Data Ingestion & Preprocessing Parameters (Week 1 / R)
 preprocessing:
-  low_expression_threshold: 1.0
-  min_sample_proportion: 0.20
-  pam50_exclude: ["Normal-like"]
+  tcga_project: "TCGA-BRCA"
+  low_expression_threshold: 1.0     # log2(TPM+1) threshold
+  min_sample_proportion: 0.20        # Expressed in >= 20% of samples
+  exclude_subtypes:
+    - "Normal-like"                 # Excluded per PAM50 subtyping standard
+  pam50_target_subtypes:
+    - "LumA"
+    - "LumB"
+    - "Her2"
+    - "Basal"
 
+# STRING Network Ingestion Parameters (Week 2 / Python)
+string_network:
+  species_id: 9606
+  combined_score_threshold: 700      # High-confidence interaction threshold (700/1000)
+
+# Nested Cross-Validation Strategy (Week 4 / ML)
 ml:
   outer_folds: 5
   inner_folds: 3
-  scoring_metric: "macro_f1"
+  scoring_metric: "f1_macro"
+  models:
+    - "RandomForest"
+    - "XGBoost"
+    - "LogisticRegression"
+    - "SVM"
+
+# Graph Neural Network Parameters (Week 5 / GNN)
+gnn:
+  epochs: 150
+  learning_rate: 0.005
+  hidden_channels: 64
+  dropout: 0.3
+  weight_decay: 0.0005
+
+# Visualizations Settings
+visualization:
+  dpi: 300
+  style: "seaborn-v0_8-whitegrid"
+  palette: "Set2"
+  fig_formats:
+    - "pdf"
+    - "png"
