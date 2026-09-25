@@ -1,0 +1,3 @@
+"pathway","n_genes_in_pathway","n_nodes_in_network","n_edges_in_network"
+"HALLMARK_APICAL_SURFACE",44,11,7
+"HALLMARK_PANCREAS_BETA_CELLS",40,9,6

@@ -1,0 +1,28 @@
+{
+  "version": "V1_baseline",
+  "network_source": "STRING",
+  "species": 9606,
+  "score_threshold": 700,
+  "centrality_method": "degree",
+  "centrality_scope": "separate pathway-specific Hallmark subnetwork",
+  "min_edges_for_centrality": 5,
+  "weighting_formula": "Score_p = sum(C_g * X_pg) / sum(C_g)",
+  "unweighted_formula": "Score_p = mean(X_pg)",
+  "expression_scale": "input matrix as supplied (expected log2(TPM+1))",
+  "n_pathways": 50,
+  "n_pathways_using_fallback": 6,
+  "n_centrality_rows": 6703,
+  "n_qc_rows": 50,
+  "random_state": 42,
+  "phenotype_used": false,
+  "pam50_used": false,
+  "leakage_safe_feature_construction": true,
+  "outputs": {
+    "network_weighted": "/home/oindree-bal/PROJECT/05_features/Hallmark_network_weighted.csv",
+    "unweighted": "/home/oindree-bal/PROJECT/05_features/Hallmark_unweighted.csv",
+    "centrality": "/home/oindree-bal/PROJECT/04_STRING/centrality_weights/centrality_weights.csv",
+    "network_summary": "/home/oindree-bal/PROJECT/04_STRING/pathway_networks/network_summary.csv",
+    "pathway_qc": "/home/oindree-bal/PROJECT/05_features/pathway_scoring_QC.csv"
+  },
+  "note": "Frozen V1 baseline methodology. V2 normalized weighting, alternative centrality measures, pathway-specific network variants, and expression-informed weighting must be implemented as separate versioned analyses."
+}

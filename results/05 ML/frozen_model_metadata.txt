@@ -1,0 +1,11 @@
+WEEK 4 FROZEN CLASSICAL MODEL
+============================================================
+Feature set: Network_Weighted_Hallmark_V3D
+Model: ElasticNet
+Nested CV mean macro-F1: 0.781965
+Nested CV SD macro-F1: 0.041030
+Balanced accuracy: 0.765000
+AUROC OVR: 0.975588
+Final parameters: {"clf__C": 10, "clf__l1_ratio": 0.5}
+Random state: 42
+NO FURTHER CLASSICAL MODEL TUNING AFTER THIS POINT.

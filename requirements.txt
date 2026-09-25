@@ -1,0 +1,32 @@
+# Core data handling
+pandas>=1.5,<3.0
+numpy>=1.23,<2.0
+
+# Machine learning
+scikit-learn>=1.2,<1.6
+xgboost>=1.7,<2.2
+
+# Network analysis (STRING PPI networks, centrality measures)
+networkx>=2.8,<3.3
+
+# Model interpretation
+shap>=0.42,<0.46
+
+# Statistics (Wilcoxon signed-rank test, etc.)
+scipy>=1.9,<1.14
+
+# Plotting (confusion matrices, SHAP summary plots, CV performance figures)
+matplotlib>=3.6,<3.10
+seaborn>=0.12,<0.14
+
+# STRING API / HTTP requests
+requests>=2.28,<3.0
+
+# Config file parsing
+PyYAML>=6.0,<7.0
+
+# Model persistence (frozen_final_model.joblib)
+joblib>=1.2,<1.5
+
+# Progress bars (optional, common in long CV loops)
+tqdm>=4.64,<5.0

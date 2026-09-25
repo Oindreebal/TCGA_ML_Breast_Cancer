@@ -1,0 +1,62 @@
+# ==============================================================================
+# CONFIGURATION FILE FOR TCGA_ML SUBTYPING & PATHWAY PIPELINE
+# ==============================================================================
+
+seed: 42
+threads: 4
+
+# Paths relative to /home/oindree-bal/TCGA_ML/TCGA_ML_Breast_Cancer/
+paths:
+  tcga_expression: "../01_data/TCGA_expression"
+  tcga_metadata: "../01_data/TCGA_metadata"
+  tcga_pam50: "../01_data/TCGA_PAM50"
+  
+  # Consolidated outputs root inside TCGA_ML_Breast_Cancer
+  results_root: "pipeline_results"
+  data_processed: "pipeline_results/processed_data"
+  results_features: "pipeline_results/features"
+  results_models: "pipeline_results/models"
+  results_metrics: "pipeline_results/metrics"
+  results_figures: "pipeline_results/figures"
+  docs: "docs"
+
+preprocessing:
+  tcga_project: "TCGA-BRCA"
+  low_expression_threshold: 1.0
+  min_sample_proportion: 0.20
+  exclude_subtypes:
+    - "Normal-like"
+  pam50_target_subtypes:
+    - "LumA"
+    - "LumB"
+    - "Her2"
+    - "Basal"
+
+string_network:
+  species_id: 9606
+  combined_score_threshold: 700
+
+ml:
+  outer_folds: 5
+  inner_folds: 3
+  scoring_metric: "f1_macro"
+  models:
+    - "RandomForest"
+    - "XGBoost"
+    - "LogisticRegression"
+    - "SVM"
+
+gnn:
+  epochs: 150
+  learning_rate: 0.005
+  hidden_channels: 64
+  dropout: 0.3
+  weight_decay: 0.0005
+
+visualization:
+  dpi: 300
+  style: "seaborn-v0_8-whitegrid"
+  palette: "Set2"
+  fig_formats:
+    - "pdf"
+    - "png"

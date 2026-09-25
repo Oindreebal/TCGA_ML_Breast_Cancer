@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.venv/
+venv/
+env/
+conda-env/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Large model/data files
+*.joblib
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.keras
+*.pt
+*.pth
+*.ckpt
+
+# Raw/processed datasets
+data/
+datasets/
+raw_data/
+processed_data/
+
+# Temporary/generated files
+tmp/
+temp/
+logs/
+*.log

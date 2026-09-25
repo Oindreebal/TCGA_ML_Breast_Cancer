@@ -1,0 +1,11 @@
+"metric","value"
+"Raw samples",1231
+"Primary tumor samples",1111
+"PAM50-present samples",1099
+"PAM50-valid samples",1099
+"Final samples",1094
+"Raw genes",60660
+"Genes after expression filtering",20436
+"Final unique gene symbols",20332
+"Duplicate patients",0
+"Missing expression values",0

@@ -1,0 +1,8 @@
+SHAP INTERPRETABILITY — FROZEN CLASSICAL MODEL
+============================================================
+Feature set: Network_Weighted_Hallmark_V3D
+Model: ElasticNet
+Explainer type: LinearExplainer
+Number of features explained: 50
+Number of classes: 5
+Random state: 42

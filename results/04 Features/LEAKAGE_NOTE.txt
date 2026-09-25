@@ -1,0 +1,35 @@
+WEEK 3 — LEAKAGE NOTE
+========================================
+
+PCA is the feature representation with a potential data leakage risk.
+
+The exploratory PCA feature matrix in PCA_features.csv was generated
+using the complete expression cohort. Therefore, these frozen PCA
+features must NOT be used directly for unbiased cross-validation
+performance estimation in Week 4.
+
+In Week 4, PCA must be fitted separately within each training fold.
+The validation fold must not influence centering, scaling, PCA
+rotation, or component selection.
+
+Chosen implementation:
+Python scikit-learn Pipeline with StandardScaler, PCA, and the
+classifier as sequential pipeline steps.
+
+Conceptual structure:
+Pipeline([
+    ('scaler', StandardScaler()),
+    ('pca', PCA(n_components=50)),
+    ('classifier', classifier)
+])
+
+Unweighted Hallmark scores are fixed arithmetic pathway means and
+do not require fold-specific PCA fitting.
+
+Network-weighted Hallmark scores use fixed STRING-derived
+pathway-specific degree centrality weights and do not require
+fold-specific PCA fitting.
+
+The frozen PCA_features.csv is retained for exploratory analysis,
+visualization, and documentation. It must not be treated as the
+fold-safe PCA representation for Week 4 model evaluation.

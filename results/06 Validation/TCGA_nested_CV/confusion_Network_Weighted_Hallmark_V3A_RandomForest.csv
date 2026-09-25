@@ -1,0 +1,6 @@
+,Pred_Basal,Pred_Her2,Pred_LumA,Pred_LumB,Pred_Normal
+True_Basal,177,7,0,3,3
+True_Her2,15,49,4,10,4
+True_LumA,3,4,478,58,22
+True_LumB,5,16,30,164,2
+True_Normal,4,2,15,2,17
